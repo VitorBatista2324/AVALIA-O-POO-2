@@ -68,7 +68,7 @@ public class Main {
         scanner.close();
     }
 
-    // metodo para criar um veiculo
+    // metodo privado que pertence a classe veiculo para criar um veiculo
     private static Veiculo criarVeiculo(Scanner scanner, String ordem) {
         System.out.println("Informe os detalhes do " + ordem + " veículo:");
         System.out.println("Marca do veículo:");
@@ -94,7 +94,7 @@ public class Main {
         }
     }
 
-    // metodo para criar uma moto
+    // metodo privado que pertence a classe veiculo para criar uma moto
     private static Veiculo criarMoto(Scanner scanner, String marca, String modelo, int potencia) {
         System.out.println("Tipo de moto (1 para ESPORTIVA, 2 para BIG_TRAIL):");
         int tipoMoto = scanner.nextInt();
@@ -107,13 +107,13 @@ public class Main {
                 tipoMotoEnum = TipoMotoEnum.BIG_TRAIL;
                 return new Moto2(marca, modelo, tipoMotoEnum, potencia); // define como big trail
             default:
-                System.out.println("Tipo de moto inválido. Escolhendo Moto1 como padrão.");
+                System.out.println("Tipo de moto inválido. Escolhendo ESPORTIVA como padrão.");
                 tipoMotoEnum = TipoMotoEnum.ESPORTIVA;
                 return new Moto1(marca, modelo, tipoMotoEnum, potencia);
         }
     }
 
-    // metodo para criar um carro
+    // metodo privado que pertence a classe veiculo para criar um carro
     private static Veiculo criarCarro(Scanner scanner, String marca, String modelo, int potencia) {
         System.out.println("Tipo de carro (1 para ESPORTIVO, 2 para OFF_ROAD):");
         int tipoCarro = scanner.nextInt();
@@ -126,7 +126,7 @@ public class Main {
                 tipoCarroEnum = TipoCarroEnum.OFF_ROAD;
                 return new Carro2(marca, modelo, tipoCarroEnum, potencia); // cria e retorna outro carro
             default:
-                System.out.println("Tipo de carro inválido. Escolhendo Carro1 como padrão.");
+                System.out.println("Tipo de carro inválido. Escolhendo ESPORTIVO como padrão.");
                 tipoCarroEnum = TipoCarroEnum.ESPORTIVO;
                 return new Carro1(marca, modelo, tipoCarroEnum, potencia);
         }
